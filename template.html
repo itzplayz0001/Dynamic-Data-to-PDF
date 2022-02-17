@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Prescription Template</title>
+    <style>
+        :root {
+            --theme: #00C2FF;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            display: flex;
+            position: relative;
+            top: 3rem;
+            width: calc(100% - 5.5rem);
+            height: 10rem;
+            margin: auto;
+        }
+
+        .clinic-profile-image-container {
+            width: 10rem;
+            min-width: 10rem;
+            height: 10rem;
+            background-color: #eee;
+        }
+
+        .header-text-area { 
+            position: relative;
+            bottom: 8px;
+            flex: auto;
+            height: fit-content;
+            background-color: transparent;
+            margin-top: 0.69rem;
+            margin-left: 1.2rem;
+            background-color: white;
+        }
+
+        .clinic-name {
+            margin: 0;
+            font-weight: 500;
+            font-size: 32px;
+            background-color: transparent;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .clinic-body {
+            margin: 0;
+            font-size: 20px;
+            color: #6B6B6B;
+        }       
+
+        .prescription-info-data-container {
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            position: relative;
+            top: 4.9rem;
+            width: calc(100% - 5.5rem);
+            height: fit-content;
+            background-color: white;
+        }
+
+        .doctor-name-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doctor-name {
+            width: fit-content;
+            height: fit-content;
+            margin: 0;
+            font-weight: 600;
+            font-size: 26px;
+        }
+
+        .doctor-qualification {
+            margin: 0;
+            float: right;
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--theme);
+        }
+
+        .registration-text {
+            color: #525252;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .reg-data {
+            color: black;
+        }
+
+        .date-container {
+            position: relative;
+            width: fit-content;
+            height: 2rem;
+            background-color: white;
+            top: 2px;
+        }
+
+        .data-label {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.2;
+        }
+
+        .bold-text {
+            font-weight: 500;
+            font-size: 23px;
+            color: black;
+        }
+
+        .patient-into-container {
+            display: flex;
+            width: calc(100% - 5.5rem);
+            height: 10.38rem;
+            margin: auto;
+            position: relative;
+            top: 6.5rem;
+        }
+
+        .embed-line {
+            width: 7px;
+            height: 100%;
+            background-color: var(--theme);
+            border-radius: 29px 0px 0px 29px;
+        }
+
+        .container {
+            width: calc(100% - 0.6rem - 6px);
+            height: 100%;
+            padding-left: 0.6rem;
+        }
+
+        .container-title {
+            font-weight: 500;
+            font-size: 23px;
+            margin-bottom: 13px;
+            margin-top: 10px;
+        }
+
+        .patient-name-container {
+            width: 100%;
+            height: fit-content;
+            min-height: 44px;
+            margin-bottom: 16px;
+        }
+
+        .container-flex-child {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            height: 44px;
+        }
+
+        .patient-medication-container {
+            display: flex;
+            width: calc(100% - 5.5rem);
+            height: fit-content;
+            margin: auto;
+            position: relative;
+            top: 8rem;
+        }
+
+        .medicine-child-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 1.5rem;
+        }
+
+        .medicine-child {
+            display: flex;
+            width: 100%;
+            height: 2.5rem;
+            margin-bottom: 1.1rem;
+            background-color: white;
+        }
+
+        .sn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2rem;
+            height: 100%;
+            background-color: white;
+        }
+
+        .sn {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .medical-name-container {
+            width: 20rem;
+            height: 100%;
+            background-color: white;
+        }
+
+        .date-type-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 100%;
+            background-color: white;
+            margin-right: 15px;
+        }
+
+        .duration-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6rem;
+            height: 100%;
+            background-color: white;
+        }
+        
+        .text-box-styled {
+            border-radius: 8px;
+            border: 2px solid #DFE3EB;
+        }
+
+        .drug {
+            position: relative;
+            top: 9px;
+            padding-left: 10px;
+            font-size: 18px;
+        }
+
+        .dataset { font-family: 'Inter'; font-size: 20px; }
+        .duration-text { font-size: 18px; }
+
+        .tight-labels {
+            margin: 0;
+            position: relative;
+            font-style: normal;
+            font-weight: 500;
+            color: #898989;
+            font-size: 16px;
+        }
+
+        .tight-left { left: 2rem; }
+        .tight-right { right: 17.3rem; }
+
+        .additional-notes-heading {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            margin-bottom: 4px;
+            padding-top: 0.7rem;
+        }
+
+        .additional-notes-body {
+            margin-top: 0;
+            max-width: 975px;
+            font-size: 17px;
+        }
+
+        .space-container {
+            position: relative;
+            width: 100%;
+            height: 9rem;
+            background-color: white;
+        }
+
+        footer {
+            width: 100%;
+            height: 16.3rem;
+            background-color: white;
+            text-align: center
+        }
+
+        .powered-by {
+            margin: 0;
+            color: #464646;
+            font-size: 18px;
+        }
+
+        .rights {
+            margin: 0;
+            color: #464646;
+            font-size: 16px;
+        }
+
+        .clinic-identity-container {
+            width: 100%;
+            height: 150px;
+            background-color: white;
+        }
+
+        .qr-container {
+            margin: auto;
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border: 3px solid #EAEAEA;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="clinic-profile-image-container">
+
+        </div>
+        <div class="header-text-area">
+            <h1 class="clinic-name">Some Clinic Name</h1>
+            <p class="clinic-body">7-1-112, Beside Gurudwar Near Satyam Thtr, Ameerpet 500016, Hyderabad, Andhra Pradesh, something something something
+                <br><br>+91 9240000000
+            </p>
+        </div>
+    </header>
+
+    <div class="prescription-info-data-container">
+        <div class="doctor-name-panel">
+            <span class="registration-text">Reg No. <span class="reg-data">
+                1234
+            </span></span>
+            <h1 class="doctor-name">
+                Dr. Bhavit Rao
+                <br><span class="doctor-qualification">
+                    B.D.S.</span>
+            </h1>
+        </div>
+        <div class="date-container">
+            <span class="data-label">Date<br><span class="bold-text">
+                06/11/2005
+            </span></span>
+        </div>
+    </div>
+
+    <div class="patient-into-container">
+        <div class="embed-line"></div>
+        <div class="container">
+            <h3 class="container-title">Patient Information</h3>
+            
+            <div class="patient-name-container">
+                <span class="data-label">Name<br><span class="bold-text" style="font-size: 20px;">
+                    Jhon Doe
+                </span></span>
+            </div>
+
+            <div class="container-flex-child">
+                <span class="data-label">Age<br><span class="bold-text" style="font-size: 20px;">
+                    17
+                </span></span>
+
+                <span class="data-label">Sex<br><span class="bold-text" style="font-size: 20px;">
+                    Male 
+                </span></span>
+
+                <span class="data-label">Blood Group<br><span class="bold-text" style="font-size: 20px;">
+                    AB+ve
+                </span></span>
+
+                <span class="data-label">Phone Number<br><span class="bold-text" style="font-size: 20px;">
+                    +91 9390000000
+                </span></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="patient-medication-container" id="drug-box" style="margin-bottom: 9rem;">
+        <div class="embed-line" id="drug-box-line"></div>
+        <div class="container">
+            <h3 class="container-title">Rx</h3>
+
+            <div class="medicine-child-header" style="border: 1px solid #fff;">
+                <h6 class="tight-labels tight-left">Medicine</h6>
+                <h6 class="tight-labels tight-right">Duration</h6>
+            </div>
+
+            <div class="medicine-child">
+                <div class="sn-container">
+                    <h1 class="sn">1</h1>
+                </div>
+                <div class="medical-name-container text-box-styled" style="margin-right: 15px;">
+                    <span class="drug">Tab Mahacef</span>
+                </div>
+                <div class="date-type-container text-box-styled">
+                    <span class="dataset">O</span>
+                </div>
+                <div class="date-type-container text-box-styled">
+                    <span class="dataset">O</span>
+                </div>
+                <div class="date-type-container text-box-styled">
+                    <span class="dataset">O</span>
+                </div>
+                <div class="duration-container text-box-styled">
+                    <span class="duration-text">1 Day</span>
+                </div>
+            </div>
+
+            <div class="medicine-child"> <div class="sn-container"> <h1 class="sn">1</h1> </div> <div class="medical-name-container text-box-styled" style="margin-right: 15px;"> <span class="drug">Tab Mahacef</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="duration-container text-box-styled"> <span class="duration-text">1 Day</span> </div> </div>
+            <div class="medicine-child"> <div class="sn-container"> <h1 class="sn">1</h1> </div> <div class="medical-name-container text-box-styled" style="margin-right: 15px;"> <span class="drug">Tab Mahacef</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="duration-container text-box-styled"> <span class="duration-text">1 Day</span> </div> </div>
+            <div class="medicine-child"> <div class="sn-container"> <h1 class="sn">1</h1> </div> <div class="medical-name-container text-box-styled" style="margin-right: 15px;"> <span class="drug">Tab Mahacef</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="duration-container text-box-styled"> <span class="duration-text">1 Day</span> </div> </div>
+            <div class="medicine-child"> <div class="sn-container"> <h1 class="sn">1</h1> </div> <div class="medical-name-container text-box-styled" style="margin-right: 15px;"> <span class="drug">Tab Mahacef</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="duration-container text-box-styled"> <span class="duration-text">1 Day</span> </div> </div>
+            <div class="medicine-child"> <div class="sn-container"> <h1 class="sn">1</h1> </div> <div class="medical-name-container text-box-styled" style="margin-right: 15px;"> <span class="drug">Tab Mahacef</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="date-type-container text-box-styled"> <span class="dataset">O</span> </div> <div class="duration-container text-box-styled"> <span class="duration-text">1 Day</span> </div> </div>
+
+
+            <h1 class="additional-notes-heading">Additional Notes</h1>
+            <p class="additional-notes-body">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+        </div>
+    </div>
+
+    <div class="space-container"></div>
+    <footer>
+        <div class="clinic-identity-container">
+            <div class="qr-container">
+
+            </div>
+        </div>
+        <p class="powered-by">Powered by</p>
+        <img src="https://dentsmart.co.in/images/logo.svg" alt="Dentsmart Technologies" class="logo">
+        <p class="rights">® All Rights Reserved</p>
+    </footer>   
+</body>
+<script>
+    let height = document.getElementById('drug-box').offsetHeight;
+    document.getElementById('drug-box-line').style.height = `${height}px`
+</script>
+</html>
